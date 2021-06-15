@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Lorentz Factor Calculator</string>
+    <string name="enter_velocity_v_below_in_metres_sec">Enter velocity(v) below in metres/sec</string>
+    <string name="invalidToast">Invalid Input, <i>v</i> should be less than <i>c</i></string>
+</resources>
