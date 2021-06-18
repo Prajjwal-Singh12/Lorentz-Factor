@@ -27,16 +27,19 @@ public class Lorentz_Factor extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String s = input.getText().toString();
-                double vel = Double.parseDouble(s);
-                if(vel<299792458 && vel>=0) {
-                    double lfactor = Calculate(vel);
-                    output.setText("Lorentz Factor = " + lfactor);
+                if (input.length()==0)
+                    input.setError("Enter velocity");
+                else{
+                    String s = input.getText().toString();
+                    double vel = Double.parseDouble(s);
+                    if(vel<299792458 && vel>=0) {
+                        double lfactor = Calculate(vel);
+                        output.setText("Lorentz Factor = " + lfactor);
+                    }
+                    else {
+                        Toast.makeText(Lorentz_Factor.this, R.string.invalidToast, Toast.LENGTH_SHORT).show();
+                    }
                 }
-                else {
-                    Toast.makeText(Lorentz_Factor.this, R.string.invalidToast, Toast.LENGTH_SHORT).show();
-                }
-
             }
         });
 
